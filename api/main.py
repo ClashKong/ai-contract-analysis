@@ -5,8 +5,8 @@ import spacy
 # API starten
 app = FastAPI()
 
-# Lade das trainierte Modell
-nlp = spacy.load("models/contract_ner")
+# Lade das neue trainierte Modell
+nlp = spacy.load("models/contract_ner_v2")
 
 # Pydantic Schema für API-Anfragen
 class ContractRequest(BaseModel):
@@ -14,7 +14,7 @@ class ContractRequest(BaseModel):
 
 @app.post("/analyze")
 def analyze_contract(request: ContractRequest):
-    """Analysiert einen Vertragstext und extrahiert Kreditbedingungen."""
+    """Analysiert einen Vertragstext und extrahiert Vertragsbedingungen."""
     doc = nlp(request.text)
     extracted_entities = {ent.label_: ent.text for ent in doc.ents}
     return extracted_entities

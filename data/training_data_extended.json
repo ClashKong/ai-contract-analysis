@@ -1,0 +1,19 @@
+[
+    {
+        "text": "Die Bank gewährt dem Kunden einen Kreditbetrag von 50.000 EUR mit einem Zinssatz von 4,5 % und einer Laufzeit von 5 Jahren. Eine Sondertilgung bis zu 10% ist möglich.",
+        "entities": [
+            {"start": 43, "end": 54, "label": "KREDITBETRAG"},
+            {"start": 76, "end": 80, "label": "ZINSSATZ"},
+            {"start": 100, "end": 107, "label": "LAUFZEIT"},
+            {"start": 125, "end": 147, "label": "SONDERKLAUSEL"}
+        ]
+    },
+    {
+        "text": "Der Kreditvertrag sieht eine Kündigungsfrist von 3 Monaten vor. Bei Nichteinhaltung wird eine Vertragsstrafe von 10.000 EUR fällig.",
+        "entities": [
+            {"start": 30, "end": 54, "label": "KÜNDIGUNGSFRIST"},
+            {"start": 82, "end": 109, "label": "VERTRAGSSTRAFE"}
+        ]
+    }
+]
+
