@@ -1,0 +1,18 @@
+[
+    {
+        "text": "Die Bank gewährt dem Kunden einen Kreditbetrag von 50.000 EUR mit einem Zinssatz von 4,5 % und einer Laufzeit von 5 Jahren.",
+        "entities": [
+            {"start": 43, "end": 54, "label": "KREDITBETRAG"},
+            {"start": 76, "end": 80, "label": "ZINSSATZ"},
+            {"start": 100, "end": 107, "label": "LAUFZEIT"}
+        ]
+    },
+    {
+        "text": "Die Finanzierungssumme beträgt 100.000 EUR mit einer Verzinsung von 3.8% über eine Laufzeit von 10 Jahren.",
+        "entities": [
+            {"start": 30, "end": 41, "label": "KREDITBETRAG"},
+            {"start": 67, "end": 71, "label": "ZINSSATZ"},
+            {"start": 88, "end": 97, "label": "LAUFZEIT"}
+        ]
+    }
+]

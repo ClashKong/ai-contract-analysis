@@ -1,0 +1,10 @@
+[
+    {
+        "text": "Die Bank gewährt dem Kunden einen Kreditbetrag von 50.000 EUR mit einem Zinssatz von 4,5 % und einer Laufzeit von 5 Jahren.",
+        "entities": [
+            {"label": "KREDITBETRAG", "value": "50.000 EUR"},
+            {"label": "ZINSSATZ", "value": "4,5%"},
+            {"label": "LAUFZEIT", "value": "5 Jahre"}
+        ]
+    }
+]
