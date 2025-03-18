@@ -1,0 +1,19 @@
+# Python-spezifische Ausschlüsse
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtuelle Umgebungen
+venv/
+.env
+
+# Log-Dateien
+*.log
+
+# Modell-Dateien (falls du große Modelle hast)
+models/
+
+# VS Code Settings (optional)
+.vscode/
+ 
