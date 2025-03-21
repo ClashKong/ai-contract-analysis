@@ -31,4 +31,6 @@ def extract_text_from_pdf(pdf_path):
 
 # TESTLAUF
 if __name__ == "__main__":
-    extract_text_from_pdf("Testvertrag.pdf")
+    extracted_text = extract_text_from_pdf("Testvertrag.pdf")
+    print("✅ Extraktion abgeschlossen. Text:")
+    print(extracted_text)
