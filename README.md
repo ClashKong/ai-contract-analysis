@@ -1,53 +1,84 @@
-📁 AI-Contract-Analysis/
-│-- backend/  # Enthält API-Logik (FastAPI)
-│-- models/  # Enthält NLP-Modelle & Trainingsscripte
-│-- api/  # API-Endpunkte
-│-- tests/  # Tests für die API und NLP-Modelle
-│-- data/  # Trainings- und Testdaten
-│-- .gitignore  # Vermeidung unnötiger Dateien im Repo
-│-- requirements.txt  # Liste benötigter Python-Packages
-│-- README.md  # Projektbeschreibung
+# 🤖 AI-Vertragsanalyse für Banken & FinTechs
 
-# .gitignore (Basis für Python-Projekte)
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-venv/
-.env
-*.log
+Dieses Projekt analysiert Kreditverträge mit Hilfe von Natural Language Processing (NLP), extrahiert wichtige Vertragsklauseln und bewertet das Risiko automatisch.
 
-# requirements.txt (Grundlegende Abhängigkeiten)
-fastapi
-uvicorn
-spacy
-torch
-tensorflow
-transformers
-pandas
-scikit-learn
+---
 
-# README.md (Initialer Inhalt)
-# AI-gestützte Vertragsanalyse für Banken
+## 🚀 Features
 
-## 🚀 Projektbeschreibung
-Dieses Projekt analysiert Kreditverträge mit NLP, um Banken zu unterstützen.
+- ✅ **PDF-Verarbeitung:** Extrahiert Text direkt aus PDF-Dateien
+- ✅ **Named Entity Recognition (NER):** Erkennt Schlüsselbegriffe wie Zinssatz, Laufzeit, Vertragsstrafe u.v.m.
+- ✅ **Risiko-Scoring:** Automatische Bewertung von Vertragsrisiken (0–10)
+- ✅ **Modernes Frontend:** Streamlit-Oberfläche mit Emojis, Farben & UX-Feedback
+- ✅ **API-Backend:** FastAPI-Schnittstellen für Text & PDF
 
-### 🔹 Features:
-- **Automatische Extraktion von Kreditbedingungen** (Named Entity Recognition)
-- **Erkennung von Risikobegriffen** in Verträgen
-- **Echtzeit-API** für Vertragsbewertung
+---
 
-### 🔧 Technologien:
-- **Python, FastAPI, spaCy, BERT, GPT**
-- **Machine Learning & NLP**
+## 🧠 Technologien
 
-### 📌 Setup
-1. **Repo klonen:** `git clone <repo-url>`
-2. **Virtuelle Umgebung erstellen:** `python -m venv venv`
-3. **Abhängigkeiten installieren:** `pip install -r requirements.txt`
-4. **API starten:** `uvicorn api.main:app --reload`
+- **Python**  
+- **spaCy** (Custom NER Modell)  
+- **FastAPI** (API Backend)  
+- **Streamlit** (UI)  
+- **PyMuPDF & Tesseract** (PDF + OCR)  
 
-### 🏆 Zielgruppe
-- Banken & FinTechs mit Fokus auf NLP
-- ML-Ingenieure & Data Scientists, die sich mit NLP beschäftigen
+---
+
+## 💻 Beispiel-Request (API)
+
+```json
+POST /analyze-pdf
+{
+  "klauseln": {
+    "ZINSSATZ": "3,5%",
+    "LAUFZEIT": "10 Jahre",
+    "VERTRAGSSTRAFE": "5.000 EUR"
+  },
+  "risiko_score": 6,
+  "bewertung": "Mittel"
+}
+```
+
+---
+
+## 🖼️ Screenshots / GIFs
+
+> Hier kannst du später ein GIF/Screenshot deiner Anwendung einfügen (z. B. mit `recordit`, `Loom`, o.ä.)
+
+---
+
+## 🧪 Lokale Installation & Test
+
+```bash
+git clone https://github.com/deinusername/ai-contract-analysis.git
+cd ai-contract-analysis
+python -m venv venv
+source venv/bin/activate  # oder venv\Scripts\activate auf Windows
+pip install -r requirements.txt
+
+# Modell trainieren (optional)
+python models/train_ner.py
+
+# API starten
+uvicorn api.main:app --reload
+
+# UI starten
+streamlit run frontend/app.py
+```
+
+---
+
+## 🌍 Optionales Deployment (z. B. Hugging Face Spaces)
+- [ ] Noch nicht live, aber geplant!
+
+---
+
+## 👨‍💻 Autor
+**M.G.** – NLP & AI-Enthusiast aus Deutschland 🇩🇪, auf Mission in San Francisco 🌉
+
+---
+
+## 📬 Kontakt
+- GitHub: [github.com/ClashKong](https://github.com/ClashKong)
+
+
