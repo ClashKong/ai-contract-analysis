@@ -25,17 +25,23 @@ if st.button("🔍 Vertrag analysieren"):
             response = requests.post(API_TEXT_URL, json=data)
         else:
             st.warning("⚠️ Bitte lade eine PDF hoch oder gib einen Text ein!")
-        
+
         if response and response.status_code == 200:
             result = response.json()
             print("📌 API RESPONSE IM FRONTEND:", result)  # Debugging
 
             st.success("✅ Analyse abgeschlossen! Hier sind die Vertragsklauseln:")
-            
-            for label, value in result.items():
-                if isinstance(value, list):  
-                    value = ", ".join(value)  
+
+            klauseln = result.get("klauseln", {})
+            for label, value in klauseln.items():
+                if isinstance(value, list):
+                    value = ", ".join(value)
                 st.markdown(f"### 📌 **{label}:** `{value}`")
+
+            st.markdown("---")
+            st.subheader("🧠 Vertrags-Risikoanalyse:")
+            st.metric("🔢 Risiko-Score", f"{result.get('risiko_score', '?')} / 10")
+            st.write(f"📊 Bewertung: **{result.get('bewertung', '?')}**")
 
         else:
             st.error("❌ Fehler bei der Analyse. Bitte versuche es erneut!")
