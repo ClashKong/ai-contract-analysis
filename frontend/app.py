@@ -40,8 +40,30 @@ if st.button("🔍 Vertrag analysieren"):
 
             st.markdown("---")
             st.subheader("🧠 Vertrags-Risikoanalyse:")
-            st.metric("🔢 Risiko-Score", f"{result.get('risiko_score', '?')} / 10")
-            st.write(f"📊 Bewertung: **{result.get('bewertung', '?')}**")
+
+            score = result.get("risiko_score", 0)
+            bewertung = result.get("bewertung", "Unbekannt")
+
+            # Bewertung visuell aufbereiten
+            if score <= 3:
+                farbe = "🟢"
+                emoji = "✅"
+            elif score <= 6:
+                farbe = "🟡"
+                emoji = "⚠️"
+            else:
+                farbe = "🔴"
+                emoji = "🚨"
+
+            st.metric("🔢 Risiko-Score", f"{score} / 10", help="Je höher der Score, desto riskanter der Vertrag.")
+            st.markdown(f"### {emoji} **Bewertung:** {farbe} **{bewertung} Risiko**")
+
+            if score >= 7:
+                st.warning("🚨 Achtung: Dieser Vertrag enthält mehrere Risikofaktoren. Prüfe die Klauseln genau.")
+            elif score <= 3:
+                st.success("✅ Gute Nachricht: Der Vertrag wirkt insgesamt risikoarm.")
+            else:
+                st.info("ℹ️ Dieser Vertrag enthält gemischte Risikomerkmale.")
 
         else:
             st.error("❌ Fehler bei der Analyse. Bitte versuche es erneut!")
